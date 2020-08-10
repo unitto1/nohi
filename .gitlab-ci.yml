@@ -44,7 +44,9 @@ docs:
 
 
 pages:
-  image: squidfunk/mkdocs-material:5.5.3
+  image:
+    name: squidfunk/mkdocs-material:5.5.3
+    entrypoint: [""]
   stage: build
   only:
     - master
