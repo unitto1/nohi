@@ -82,5 +82,5 @@ build-tags:
   before_script:
     - docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD}
   script:
-    - docker build --build-arg flags="-X ${PKG}/cmd.Commit=${CI_COMMIT_SHORT_SHA} ${PKG}/cmd.Version=${CI_COMMIT_TAG}" -t ${TAG_IMAGE} -f build/Dockerfile .
+    - docker build --build-arg flags="-X ${PKG}/cmd.Commit=${CI_COMMIT_SHORT_SHA} -X ${PKG}/cmd.Version=${CI_COMMIT_TAG}" -t ${TAG_IMAGE} -f build/Dockerfile .
     - docker push ${TAG_IMAGE}

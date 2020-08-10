@@ -13,7 +13,7 @@ build: test
 	CGO_ENABLED=0 go build -ldflags "-X ${PKG}/cmd.Commit=${COMMIT}"
 
 test:
-	CGO_ENABLED=0 go test -v ./... -cover -race
+	go test -v ./... -cover -race
 
 bench:
 	CGO_ENABLED=0 go test -v -benchmem ./... -bench .
