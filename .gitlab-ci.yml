@@ -61,7 +61,7 @@ build-master:
   image: docker:stable
   stage: build
   services:
-    - docker:dind-stable
+    - docker:stable-dind
   only:
     - master
   before_script:
@@ -74,7 +74,7 @@ build-tags:
   image: docker:stable
   stage: build
   services:
-    - docker:dind-stable
+    - docker:stable-dind
   only:
     - tags
   before_script:
