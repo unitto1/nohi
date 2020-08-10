@@ -78,9 +78,11 @@ func (g *Generator) Generate() string {
 	return string(res)
 }
 
+const defaultLength = 20
+
 func New() *Generator {
 	return &Generator{
-		20,
+		defaultLength,
 		true,
 		true,
 		false,
