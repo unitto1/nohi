@@ -1,5 +1,5 @@
 # nohi
-> **Last Release:** v0.0.0
+> **Last Release:** v0.1.0
 
 > **Docs URL:** [nohi.unittolabs.com](https://nohi.unittolabs.com)
 

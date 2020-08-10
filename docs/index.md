@@ -8,7 +8,7 @@
 
 ---
 # Introduction
-> **Last Release:** v0.0.0
+> **Last Release:** v0.1.0
 
 > **Docs Commit:** {commit}
 
