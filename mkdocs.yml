@@ -10,7 +10,6 @@ nav:
     - Human-friendly IDs: sdk/hid.md
     - Passwords: sdk/pwd.md
     - UUIDs: sdk/uuid.md
-  - Contributing: contributing.md
 
 site_name: nohi
 site_description: Fast command-line tool and library for generation human ids, uuids and passwords.

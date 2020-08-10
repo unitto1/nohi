@@ -1,1 +1,1 @@
-docs/contributing.md
+# Contributing to the project
