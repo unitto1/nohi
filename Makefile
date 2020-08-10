@@ -13,13 +13,29 @@ build: test
 	CGO_ENABLED=0 go build -ldflags "-X ${PKG}/cmd.Commit=${COMMIT}"
 
 test:
-	go test -v ./... -cover -race
+	CGO_ENABLED=0 go test -v ./... -cover -race
 
 bench:
-	go test -v -benchmem ./... -bench .
+	CGO_ENABLED=0 go test -v -benchmem ./... -bench .
 
 bench-long:
-	go test -v -cpu 1,2,4,8 -benchmem -benchtime 5s ./... -bench .
+	CGO_ENABLED=0 go test -v -cpu 1,2,4,8 -benchmem -benchtime 5s ./... -bench .
 
 lint:
-	golangci-lint run
+	golangci-lint -v run
+
+
+### Docs shortcuts
+docs:
+	mkdocs build --verbose --site-dir public
+
+docs-serve:
+	mkdocs serve
+
+
+### Docker shortcuts
+docker:
+	docker build --build-arg flags="-X ${PKG}/cmd.Commit=${COMMIT}" -t unitto/nohi:dev -f build/Dockerfile .
+
+docker-test:
+	docker run unitto/nohi:dev
