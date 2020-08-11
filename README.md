@@ -5,7 +5,7 @@
 
 _NOHI - it's an abbreviation from Not Only Human-friendly IDs_
 
-The main idea of this library and command-lite tool is to provide easy and performant
+The main idea of this library and command-line tool is to provide easy and performant
 way to generate useful sensitive data such a Human-friendly ID, password, etc.
 
 ## Requirements
@@ -48,10 +48,13 @@ $ nohi completion -h
 ```bash
 # run docker image
 $ docker run unitto/nohi -h
+
+# stable version (last release)
+$ docker run unitto/nohi:stable -h
 ```
 
 ## Example Usage
-Lest generate 10 logins and passwords for our mates:
+Lets generate 10 logins and passwords for our mates:
 
 ```bash
 $ nohi hid -n 10 && nohi pwd -n 10
