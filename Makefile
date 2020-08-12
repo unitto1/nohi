@@ -4,7 +4,7 @@ PKG="gitlab.com/unitto/nohi"
 COMMIT="$$(git rev-parse --short HEAD)"
 
 dep:
-	python3 -m pip install -r build/requirements.dev.txt
+	python3 -m pip install -r requirements.dev.txt
 	go get golang.org/x/tools/cmd/goimports
 	curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $$(go env GOPATH)/bin v1.30.0
 
@@ -35,7 +35,7 @@ docs-serve:
 
 ### Docker shortcuts
 docker:
-	docker build --build-arg flags="-X ${PKG}/cmd.Commit=${COMMIT}" -t unitto/nohi:dev -f build/Dockerfile .
+	docker build --build-arg flags="-X ${PKG}/cmd.Commit=${COMMIT}" -t unitto/nohi:dev .
 
 docker-test:
 	docker run unitto/nohi:dev
