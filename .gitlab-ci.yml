@@ -71,6 +71,7 @@ build-master:
     - docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD}
   script:
     - docker build --build-arg flags="-X ${PKG}/cmd.Commit=${CI_COMMIT_SHORT_SHA}" -t ${REGISTRY_IMAGE} .
+    - docker run ${REGISTRY_IMAGE} version
     - docker push ${REGISTRY_IMAGE}
 
 build-tags:
@@ -84,6 +85,7 @@ build-tags:
     - docker login -u ${REGISTRY_USER} -p ${REGISTRY_PASSWORD}
   script:
     - docker build --build-arg flags="-X ${PKG}/cmd.Commit=${CI_COMMIT_SHORT_SHA} -X ${PKG}/cmd.Version=${CI_COMMIT_TAG}" -t ${TAG_IMAGE} .
+    - docker run ${TAG_IMAGE} version
     - docker push ${TAG_IMAGE}
     - docker tag ${TAG_IMAGE} ${STABLE_IMAGE}
     - docker push ${STABLE_IMAGE}

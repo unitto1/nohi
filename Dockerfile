@@ -5,7 +5,9 @@ ARG flags
 WORKDIR /
 COPY . .
 
-RUN set -x; CGO_ENABLED=0 go build -ldflags "${flags}" -o /nohi
+RUN set -x; apk add --no-cache upx \
+    && CGO_ENABLED=0 go build -ldflags "-s ${flags}" -o nohi \
+    && upx -9 nohi
 
 ### Deploy stage
 FROM scratch
