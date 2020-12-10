@@ -15,4 +15,4 @@ FROM scratch
 COPY --from=0 /nohi /usr/bin/nohi
 
 ENTRYPOINT ["nohi"]
-CMD ["nohi --help"]
+CMD ["--help"]
